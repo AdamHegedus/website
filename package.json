@@ -1,0 +1,32 @@
+{
+  "name": "website",
+  "version": "1.0.0",
+  "description": "website",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AdamHegedus/website.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AdamHegedus/website/issues"
+  },
+  "homepage": "https://github.com/AdamHegedus/website#readme",
+  "dependencies": {
+    "@types/angular": "^1.6.2",
+    "@types/angular-ui-router": "^1.1.36",
+    "@types/lodash": "^4.14.50",
+    "angular": "^1.6.1",
+    "angular-ui-router": "^0.4.0",
+    "gulp": "^3.9.1",
+    "jasmine": "^2.5.3",
+    "karma": "^1.4.0",
+    "lodash": "^4.17.4",
+    "typescript": "^2.1.5"
+  }
+}
