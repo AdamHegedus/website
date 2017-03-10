@@ -28,5 +28,13 @@
     "karma": "^1.4.0",
     "lodash": "^4.17.4",
     "typescript": "^2.1.5"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^3.1.0",
+    "gulp-typescript": "^3.1.5",
+    "gulp-uglify": "^2.1.0",
+    "typescript": "^2.2.1"
   }
 }
