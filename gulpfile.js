@@ -2,11 +2,19 @@ var gulp = require('gulp');
 var sass = require('gulp-sass');
 var ts = require('gulp-typescript');
 var rename = require('gulp-rename');  
-var uglify = require('gulp-uglify'); 
+var uglify = require('gulp-uglify');
+var sassLint = require('gulp-sass-lint');
 
 var project = ts.createProject('tsconfig.json');
 
-gulp.task('build:sass', function () {
+gulp.task('lint:sass', function () {
+  return gulp.src('app/scss/**/*.scss')
+    .pipe(sassLint())
+    .pipe(sassLint.format())
+    .pipe(sassLint.failOnError())
+});
+
+gulp.task('build:sass', ['lint:sass'], function () {
     return gulp.src('app/scss/index.scss')
         .pipe(sass())
         .pipe(gulp.dest('dist/css'));
