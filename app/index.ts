@@ -1,13 +1,13 @@
 
 module App {
 
-    angular.module('app.podcast', [])
+    angular.module('app.podcast', []);
 
     let app = angular.module('app', ['ui.router', 'app.podcast']);
 
     app.config([
-        '$stateProvider', 
-        '$urlRouterProvider', 
+        '$stateProvider',
+        '$urlRouterProvider',
         ($stateProvider: angular.ui.IStateProvider, $urlRouterProvider: angular.ui.IUrlRouterProvider): void => {
             $stateProvider.state('home', {
                 url: '/home',
