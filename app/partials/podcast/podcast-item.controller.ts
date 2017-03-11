@@ -1,4 +1,4 @@
-module App{
+module App.Podcast {
 
     interface IPodcastItemControllerScope extends ng.IScope {
         podcasts: Array<IPodcastItem>;
@@ -14,8 +14,8 @@ module App{
     class PodcastItemController {
         public static $inject: Array<string> = ['$scope'];
 
-        constructor (private _$scope: IPodcastItemControllerScope) {
-            this._$scope.podcasts = [
+        constructor ($scope: IPodcastItemControllerScope) {
+            $scope.podcasts = [
                 {
                     id: 1,
                     artist: 'Artist',

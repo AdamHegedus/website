@@ -1,13 +1,14 @@
-module App {
+module App.Podcast {
+
+    class PodcastItem {
+        public restrict: string = 'E';
+        public replace: boolean = true;
+        public controller: string = 'podcastItemController';
+        public templateUrl: string = 'app/partials/podcast/podcast-item.html';
+        public $scope: Object = {};
+    }
 
     angular.module('app.podcast')
-        .directive('podcast', function podcastItem() {
-            return {
-                restrict: 'E',
-                replace: true,
-                templateUrl: 'app/partials/podcast/podcast-item.html',
-                controller: 'podcastItemController'
-            };
-        });
+        .directive('podcast', () => new PodcastItem());
 
 }
