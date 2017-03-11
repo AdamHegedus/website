@@ -4,6 +4,8 @@ var ts = require('gulp-typescript');
 var rename = require('gulp-rename');  
 var uglify = require('gulp-uglify');
 var sassLint = require('gulp-sass-lint');
+var gulpTslint = require('gulp-tslint');
+var tslint = require('tslint');
 
 var project = ts.createProject('tsconfig.json');
 
@@ -20,7 +22,15 @@ gulp.task('build:sass', ['lint:sass'], function () {
         .pipe(gulp.dest('dist/css'));
 });
 
-gulp.task('build:typescript', function () {
+gulp.task('lint:typescript', function () {
+    return gulp.src('app/**/*.ts')
+        .pipe(gulpTslint({
+            formatter: 'verbose'
+        }))
+        .pipe(gulpTslint.report());
+});
+
+gulp.task('build:typescript', ['lint:typescript'], function () {
     return gulp.src('app/**/*.ts')
         .pipe(project())
         .js.pipe(gulp.dest(''));
