@@ -18,7 +18,7 @@ gulp.task('build:typescript', function () {
         .js.pipe(gulp.dest(''));
 });
 
-gulp.task('minify:js',  function () {
+gulp.task('minify:js',  ['build:typescript'], function () {
     return gulp.src('dist/script/app.js')
         .pipe(rename('app.min.js'))
         .pipe(uglify())
