@@ -3,6 +3,7 @@ var sass = require('gulp-sass');
 var ts = require('gulp-typescript');
 var rename = require('gulp-rename');  
 var uglify = require('gulp-uglify'); 
+var typedoc = require('gulp-typedoc');
 
 var project = ts.createProject('tsconfig.json');
 
@@ -26,3 +27,10 @@ gulp.task('minify:js',  function () {
 });
 
 gulp.task('build', ['build:sass', 'build:typescript', 'minify:js']);
+
+gulp.task('generate:typedoc', function () {
+    return gulp.src('app/**/*.ts')
+        .pipe(typedoc({
+            out: 'dist/typedoc'
+        }));
+});
